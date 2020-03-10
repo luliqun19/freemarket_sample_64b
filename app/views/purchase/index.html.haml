@@ -1,19 +1,67 @@
-.header
-  .header__logo
-    ベルカリ
-.contents
-  .contents__message
-    購入内容の確認
-  =link_to "https://www.facebook.com/", class: "contents__btn contents__btn--facebook" do
-    = icon('fab', 'facebook-square',  class: "contents__btn--icon")
-    %span<>
-    F商品名
-  =link_to "https://twitter.com/", class: "contents__btn contents__btn--twitter" do
-    = icon('fab', 'twitter', class: "contents__btn--icon")
-    %span<>
-    Twitter
-  =link_to "https://www.instagram.com/", class: "contents__btn contents__btn--instagram" do
-    = icon('fab', 'instagram', class: "contents__btn--icon")
-    %span<>
-    Instagram
-.footer
+.purchase
+  = "header"
+  .purchase__inner
+    .purchase__inner__main
+      %h1.purchase__inner__main__confirmation
+        購入内容の確認
+      .purchase__inner__main__item 
+        = link_to "item image","#", class: 'purchase__inner__main__item__image'
+        %ul.purchase__inner__main__item__description
+          %li.purchase__inner__main__item__description__name
+            江戸小紋 正絹 袷 作家物 落款 証紙付 紫色 着物
+          %li
+            %ul.purchase__inner__main__item__description__money
+              %li.purchase__inner__main__item__description__money__money
+                ¥19,800 （税込）
+              %li.purchase__inner__main__item__description__money__text 
+                送料込み
+      .purchase__inner__main__form
+        .purchase__inner__main__form__cost
+          %ul.purchase__inner__main__form__cost__box
+            %li.purchase__inner__main__form__cost__box__head
+              支払い金額
+            %li.purchase__inner__main__form__cost__box__amount
+              ¥19,800
+          = label_tag :use_point ,class: 'purchase__inner__main__form__cost__usepoint' do
+            = check_box :use_point, class: 'purchase__inner__main__form__cost__usepoint__button'
+            %p.purchase__inner__main__form__cost__usepoint__text
+              ポイントを使用 (所持ポイント: P0)
+
+        .purchase__inner__main__form__payment
+          %ul
+            %li.residence-title 支払い方法
+            %li.register-button
+              = icon("fas", "plus-circle")
+              = link_to link_to "クレジットカード登録ページ","#" do
+                登録してください
+            
+        .purchase__inner__main__form__shipping
+          %ul.data-exists__header
+            %li.residence-title 配送先
+            %li.data-exists__header__modify
+              = link_to link_to "user_address","#" do
+                変更する
+          %ul.residence-data
+            %li 〒
+            %li
+              %ul.residence-data__address
+                %li.residence-data__address__item
+                  東京都
+                %li.residence-data__address__item
+                  渋谷区
+                %li.residence-data__address__item
+                  block
+                %li.residence-data__address__item
+                  building
+            %li
+              %ul.residence-data__name
+                %li.residence-data__name__item
+                  山田
+                %li.residence-data__name__item
+                  太郎
+
+        .purchase__inner__main__form__buy
+          = button_to '購入する', class: 'purchase__inner__main__form__buy__button'
+          
+  .purchase__inner__footer
+    = "footer"
