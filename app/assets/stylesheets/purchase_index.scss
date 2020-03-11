@@ -18,19 +18,6 @@
     height: 800px;
     margin: 0 auto ;
     background-color: white;
-    // &__top{
-    //   width: 700px;
-    //   height: 128px;
-    //   text-align: center;
-    //   background-color: #F5F5F5;
-    //   display: flex;
-    //   align-items: center;
-    //   &__logo{
-    //     height: 50px;
-    //     display: block;
-    //     margin: 0 auto;
-    //   }
-    // }
     &__main{
       width: 700px;
       height: 741px;
@@ -106,29 +93,17 @@
           &__usepoint{
             display: flex;
             input[type=checkbox] {
-              // -ms-transform: scale(1.5, 1.5);
-              // -webkit-transform: scale(1.5, 1.5);
+              -ms-transform: scale(1.5, 1.5);
+              -webkit-transform: scale(1.5, 1.5);
               transform: scale(1.3);
-              // position: relative;
               margin-top: 10px;
             }
-
-            // &__button{
-
-              // margin-left: 0px;
-              // margin-top: 25px;
-              // color: #000;
-            
-
-            // }
             
             &__text{
               margin-left: 15px;
               margin-top: 10px;
               color: gray;
               font-size: 14px;
-              // padding: 0 0 0 2px;
-
             }
           }
         }
@@ -162,20 +137,7 @@
           height: 140px;
           background-color: white;
 
-          // &__app{
-          //   margin-top: 33px;
-          //   width: 343px;
-          //   height: 50px;
-          //   background-color:#888;
-          //   color: white;
-          //   font-size: 16px;
-          //   line-height: 50px;
-          //   text-align: center;
-          // }
-
           &__button{
-            
-
             margin-top: 33px;
             width: 343px;
             height: 50px;
@@ -184,51 +146,11 @@
             font-size: 16px;
             line-height: 50px;
             text-align: center;
-            
-            
-            // &__not {
-            //   margin-top: 33px;
-            //   width: 343px;
-            //   height: 50px;
-            //   line-height: 50px;
-            //   background-color: gray;
-            //   color: white;
-            //   font-size: 16px;
-            //   text-align: center;
-            // }
           }
         }
       } 
       
     }
-    // &__footer{
-    //   width: 700px;
-    //   height: 256px;
-    //   background-color: #F5F5F5;
-    //   &__list{
-    //     padding-top: 40px;
-    //     font-size: 12px;
-    //     display: flex;
-    //     justify-content: space-evenly;
-    //     color: #333;
-    //     &__privacy{
-    //       margin-left: 60px
-    //     }
-    //     &__disp{
-    //       margin-right: 60px;
-    //     }
-    //   }
-    //   &__logo{
-    //     width: 223.5px;
-    //     height: 90px;
-    //     margin: 0 auto;
-    //     text-align: center;
-    //     margin-top: 40px;
-    //     &__image{
-    //       height: 65px;
-    //     }
-    //   }
-    // }
   }
 }
 
@@ -255,10 +177,6 @@
     padding-bottom: 5px;
   }
 }
-
-// .card-title {
-//   font-weight: bold;
-// }
 
 .residence-title {
   font-weight: bold;
