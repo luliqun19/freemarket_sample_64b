@@ -1,5 +1,6 @@
+.header
+  = "mercari logo"
 .purchase
-  = "header"
   .purchase__inner
     .purchase__inner__main
       %h1.purchase__inner__main__confirmation
@@ -22,10 +23,9 @@
               支払い金額
             %li.purchase__inner__main__form__cost__box__amount
               ¥19,800
-          = label_tag :use_point ,class: 'purchase__inner__main__form__cost__usepoint' do
-            = check_box :use_point, class: 'purchase__inner__main__form__cost__usepoint__button'
-            %p.purchase__inner__main__form__cost__usepoint__text
-              ポイントを使用 (所持ポイント: P0)
+          %label.purchase__inner__main__form__cost__usepoint
+            = check_box :point, class: 'purchase__inner__main__form__cost__usepoint__button' 
+            .purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P888)
 
         .purchase__inner__main__form__payment
           %ul
@@ -42,7 +42,7 @@
               = link_to link_to "user_address","#" do
                 変更する
           %ul.residence-data
-            %li 〒
+            %li 〒111-8888
             %li
               %ul.residence-data__address
                 %li.residence-data__address__item
@@ -50,9 +50,9 @@
                 %li.residence-data__address__item
                   渋谷区
                 %li.residence-data__address__item
-                  block
+                  神南坂
                 %li.residence-data__address__item
-                  building
+                  フレーム
             %li
               %ul.residence-data__name
                 %li.residence-data__name__item
@@ -61,7 +61,7 @@
                   太郎
 
         .purchase__inner__main__form__buy
-          = button_to '購入する', class: 'purchase__inner__main__form__buy__button'
-          
-  .purchase__inner__footer
-    = "footer"
+          .purchase__inner__main__form__buy__button
+            = "購入する"
+  .footer
+    = "footer プライバシーポリシー/ メルカリ利用規約 /特定商取引に関する表記"
