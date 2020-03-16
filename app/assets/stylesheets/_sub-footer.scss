@@ -1,0 +1,35 @@
+.sub-footer{
+  width: 700px;
+  height: 256px;
+  background-color: #F5F5F5;
+  &__box{
+    &__menu{
+
+    
+    padding-top: 40px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #333;
+    &__privacy{
+      margin-left: 60px
+    }
+    &__kiyaku{
+      margin-right: 60px;
+    }
+    &__torihiki{
+      margin-right: 60px;
+    }
+  }
+  }
+  &__image{
+    width: 223.5px;
+    height: 90px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    &__bottom{
+      height: 65px;
+    }
+  }
+}
