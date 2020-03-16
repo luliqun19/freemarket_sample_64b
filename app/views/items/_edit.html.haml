@@ -1,7 +1,7 @@
 .purchase
   %p.purchase__subheader
     = link_to root_path  do
-      =image_tag "logo.png", width: '150px',height:'auto'
+      =image_tag "logo.png", width: '100px',height:'auto'
   .purchase__inner
     .purchase__inner__main
       %h1.purchase__inner__main__confirmation
@@ -62,25 +62,21 @@
                   太郎
 
         .purchase__inner__main__form__buy
-          -# = link_to "#" do
-          -#   %p.purchase__inner__main__form__buy__button
-          -#     購入する
           = submit_tag '購入する', class: 'purchase__inner__main__form__buy__button'
-  -# .footer
-  -#   = "footer プライバシーポリシー/ メルカリ利用規約 /特定商取引に関する表記"
-  %p.purchases-subfooter
-        .sub-footer__box
-          %ul.sub-footer__box__menu
-            %li.sub-footer__box__menu__privacy
-            = link_to "#" do
-              プライバシーポリシー
-            %li.sub-footer__box__menu__kiyaku
-            = link_to "#" do
-              メルカリ利用規約
-            %li.sub-footer__box__menu__torihiki
-              = link_to "#" do
-               特定商取引に関する表記
-        = link_to root_path  do
-          = image_tag "logo-white.png", class:"sub-footer__box__image"
-          .sub-footer__box__bottom
-            © Furima, Inc.
+  .sub-footer
+    .sub-footer__box
+      %ul.sub-footer__box__menu
+        %li.sub-footer__box__menu__privacy
+          = link_to "#" do
+            プライバシーポリシー
+        %li.sub-footer__box__menu__kiyaku
+          = link_to "#" do
+            メルカリ利用規約
+        %li.sub-footer__box__menu__torihiki
+          = link_to "#" do
+            特定商取引に関する表記
+      = link_to root_path do
+        %p.sub-footer__box__image
+          = image_tag "logo-white.png", width: '100px', height: "auto"
+      .sub-footer__box__bottom
+        = "© Furima, Inc." 
