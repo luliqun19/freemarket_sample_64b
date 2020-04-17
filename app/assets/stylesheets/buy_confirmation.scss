@@ -1,5 +1,5 @@
 .purchase {
-  background-color: #F5F5F5;
+  background-color: #d3d3d3;
   width: 100vw;
   &__subheader {
     display:table;
@@ -215,19 +215,19 @@
   }
   
   &__image{
-    width: 100.5px;
+    width: 102px;
     height: auto;
     padding-top: 10px;
     margin: 0 auto;
     color: black;
-    margin: 10px, 0;
+    margin: 20px, 0;
 
   }
     &__bottom{
       height: 65px;
-      font-size: 18px;
+      font-size: 16px;
       text-align: center;
-      margin: 10px, 0;
+      margin: 20px, 0;
 
     }
   }

@@ -32,13 +32,25 @@
               .purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P 0 )
 
           .purchase__inner__main__form__payment
+            -# - if @default_card_information.blank?
+            -# %ul
+            -#   %li.residence-title 支払い方法く
+            -#   %li.register-button
+            -#     = icon("fas", "plus-circle")
+            -#     = link_to "/cards/new" do
+            -#       登録してください
+            -# - else
             %ul
-              %li.residence-title 支払い方法
-              %li.register-button
-                = icon("fas", "plus-circle")
-                = link_to "/cards/new" do
-                  登録してください
-              
+              %ul.data-exists__header
+                %li.residence-title 支払い方法２
+                %li.data-exists__header__modify
+                  = link_to "#" do
+                    変更する
+            %ul.residence-data
+              %li クレジットカード
+              = "**** **** **** 3164" #+ @default_card_information.last4 
+              %br
+              = "有効期限 01/26" #+ @default_card_information.last4 
           .purchase__inner__main__form__shipping
             %ul.data-exists__header
               %li.residence-title 配送先
