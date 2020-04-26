@@ -92,4 +92,9 @@ ActiveRecord::Schema.define(version: 20200324025657) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
+<<<<<<< Updated upstream
+=======
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+>>>>>>> Stashed changes
 end
