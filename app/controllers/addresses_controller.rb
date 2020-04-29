@@ -19,6 +19,7 @@ class AddressesController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
@@ -35,6 +36,6 @@ class AddressesController < ApplicationController
   end
 
   def set_address
-    @address = Address.find(params[:id])
+  @address = Address.find(params[:id])
   end
 end

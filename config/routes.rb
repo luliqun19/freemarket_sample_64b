@@ -7,13 +7,12 @@ Rails.application.routes.draw do
       get 'category_children',defaults:{format:'json'}
       get 'category_grandchildren',defaults:{format:'json'}
     end
-  end
-  resources :items, only: [:show , :edit, :new] do
+  
     member do
       get 'buy_confirmation'
       post 'payment'
       get 'buy_complete'
-    end
+end
 end
 
   resources :images, only: [:index]

@@ -13,56 +13,71 @@
           =image_tag("https://static.mercdn.net/thumb/photos/m23131409920_1.jpg?1582977073", class: 'purchase__inner__main__item__image')
           %ul.purchase__inner__main__item__description
             %li.purchase__inner__main__item__description__name
-              江戸小紋 正絹 袷 作家物 落款 証紙付 紫色 着物
+              -# 江戸小紋 正絹 袷 作家物 落款 証紙付 紫色 着物
+              = @item.name
             %li
               %ul.purchase__inner__main__item__description__money
                 %li.purchase__inner__main__item__description__money__money
-                  ¥19,800 （税込）
+                  ¥#{@item.price.to_s(:delimited)}
                 %li.purchase__inner__main__item__description__money__text 
-                  送料込み
+                  -# 送料込み
+                  #{@item.delivery_charge}
         .purchase__inner__main__form
           .purchase__inner__main__form__cost
             %ul.purchase__inner__main__form__cost__box
               %li.purchase__inner__main__form__cost__box__head
                 支払い金額
               %li.purchase__inner__main__form__cost__box__amount
-                ¥19,800
+                ¥#{@item.price.to_s(:delimited)}
             %label.purchase__inner__main__form__cost__usepoint
               = check_box :point, class: 'purchase__inner__main__form__cost__usepoint__button' 
               .purchase__inner__main__form__cost__usepoint__text ポイントを使用 (所持ポイント: P 0 )
 
           .purchase__inner__main__form__payment
+            -# - if @default_card_information.blank?
+            -# %ul
+            -#   %li.residence-title 支払い方法く
+            -#   %li.register-button
+            -#     = icon("fas", "plus-circle")
+            -#     = link_to "/cards/new" do
+            -#       登録してください
+            -# - else
             %ul
-              %li.residence-title 支払い方法
-              %li.register-button
-                = icon("fas", "plus-circle")
-                = link_to "/cards/new" do
-                  登録してください
-              
+              %ul.data-exists__header
+                %li.residence-title 支払い方法２
+                %li.data-exists__header__modify
+                  = link_to "#" do
+                    変更する
+            %ul.residence-data
+              %li クレジットカード
+              = "**** **** **** " + @default_card_information.last4 
+              %br
+              = "有効期限 01/26" #+ @default_card_information.last4 
           .purchase__inner__main__form__shipping
             %ul.data-exists__header
-              %li.residence-title 配送先
+              %li.residence-title 配送
               %li.data-exists__header__modify
-                = link_to "#" do
-                  変更する
+                = link_to edit_address_path(current_user.address.id) do
+                  変更する 
             %ul.residence-data
-              %li 〒111-8888
+              %li
+                〒#{current_user.address.postcode}
               %li
                 %ul.residence-data__address
                   %li.residence-data__address__item
-                    東京都
+                    = current_user.address.prefecture
                   %li.residence-data__address__item
-                    渋谷区
+                    = current_user.address.city
                   %li.residence-data__address__item
-                    神南坂
+                    = current_user.address.block
                   %li.residence-data__address__item
-                    フレーム
+                    = current_user.address.building
               %li
                 %ul.residence-data__name
                   %li.residence-data__name__item
-                    山田
+                    = "#{current_user.last_name}  "
                   %li.residence-data__name__item
-                    太郎
+                    = "#{current_user.first_name}  "
 
           .purchase__inner__main__form__buy
             = link_to buy_complete_item_path  do

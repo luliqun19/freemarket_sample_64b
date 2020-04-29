@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
   end
 
   def buy_confirmation
+    @item = Item.find(params[:id])
   end
 
   def payment
@@ -49,6 +50,10 @@ class ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:name,:text,:item_status,:price,:delivery_area,:delivery_charge,:delivery_days,:brand_id,:category_id,images_attributes: [:image]).merge(solder_id: current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name).merge(user_id: current_user.id)
   end
   
 
