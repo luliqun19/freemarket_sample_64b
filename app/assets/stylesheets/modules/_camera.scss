@@ -18,3 +18,7 @@
     margin: auto;
   }
 }
+.camera__button:hover {
+  @include color(#40e0d0,0);
+  transition: all  0.8s ease;
+}
